@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fitbit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="wrap" class="hidden">
+    <div class="watch">
+      <div class="strap top"></div>
+
+      <div class="screen">
+        <div class="statusbar">
+          <div class="time" id="timeText">00:00</div>
+          <div class="pill" id="pillText">FITBIT</div>
+        </div>
+
+        <!-- Home -->
+        <div id="pageHome" class="page">
+          <div class="headline">Vitals</div>
+
+          <div class="tiles">
+            <div class="tile">
+              <div class="tileTop">
+                <div class="dot health"></div>
+                <div class="tileName">Health</div>
+              </div>
+              <div class="tileVal"><span id="healthPreview">35</span><span class="pct">%</span></div>
+              <div class="tileSub">Alert threshold</div>
+            </div>
+
+            <div class="tile">
+              <div class="tileTop">
+                <div class="dot hunger"></div>
+                <div class="tileName">Hunger</div>
+              </div>
+              <div class="tileVal"><span id="hungerPreview">35</span><span class="pct">%</span></div>
+              <div class="tileSub">Alert threshold</div>
+            </div>
+
+            <div class="tile">
+              <div class="tileTop">
+                <div class="dot thirst"></div>
+                <div class="tileName">Thirst</div>
+              </div>
+              <div class="tileVal"><span id="thirstPreview">35</span><span class="pct">%</span></div>
+              <div class="tileSub">Alert threshold</div>
+            </div>
+          </div>
+
+          <div class="hint">Tap Settings to change alerts</div>
+        </div>
+
+        <!-- Settings -->
+        <div id="pageSettings" class="page hidden">
+          <div class="headlineRow">
+            <div class="headline">Settings</div>
+
+            <label class="toggle">
+              <input id="enabled" type="checkbox">
+              <span class="track"></span>
+              <span class="label">On</span>
+            </label>
+          </div>
+
+          <div class="group">
+            <div class="groupTitle">
+              <span class="dot health"></span> Health Alerts
+              <label class="miniToggle">
+                <input id="healthEnabled" type="checkbox">
+                <span></span>
+              </label>
+            </div>
+
+            <div class="row">
+              <div class="rowLeft">
+                <div class="rowName">Threshold</div>
+                <div class="rowSub">Notify when below</div>
+              </div>
+              <div class="rowRight">
+                <input id="healthThreshold" type="range" min="1" max="100" value="35">
+                <div class="chip"><span id="healthThresholdText">35</span>%</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="rowLeft">
+                <div class="rowName">Step</div>
+                <div class="rowSub">Notify each drop</div>
+              </div>
+              <div class="rowRight">
+                <input id="healthStep" type="range" min="1" max="25" value="5">
+                <div class="chip"><span id="healthStepText">5</span>%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <div class="groupTitle">
+              <span class="dot hunger"></span> Hunger Alerts
+              <label class="miniToggle">
+                <input id="hungerEnabled" type="checkbox">
+                <span></span>
+              </label>
+            </div>
+
+            <div class="row">
+              <div class="rowLeft">
+                <div class="rowName">Threshold</div>
+                <div class="rowSub">Notify when below</div>
+              </div>
+              <div class="rowRight">
+                <input id="hungerThreshold" type="range" min="1" max="100" value="35">
+                <div class="chip"><span id="hungerThresholdText">35</span>%</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="rowLeft">
+                <div class="rowName">Step</div>
+                <div class="rowSub">Notify each drop</div>
+              </div>
+              <div class="rowRight">
+                <input id="hungerStep" type="range" min="1" max="25" value="5">
+                <div class="chip"><span id="hungerStepText">5</span>%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <div class="groupTitle">
+              <span class="dot thirst"></span> Thirst Alerts
+              <label class="miniToggle">
+                <input id="thirstEnabled" type="checkbox">
+                <span></span>
+              </label>
+            </div>
+
+            <div class="row">
+              <div class="rowLeft">
+                <div class="rowName">Threshold</div>
+                <div class="rowSub">Notify when below</div>
+              </div>
+              <div class="rowRight">
+                <input id="thirstThreshold" type="range" min="1" max="100" value="35">
+                <div class="chip"><span id="thirstThresholdText">35</span>%</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="rowLeft">
+                <div class="rowName">Step</div>
+                <div class="rowSub">Notify each drop</div>
+              </div>
+              <div class="rowRight">
+                <input id="thirstStep" type="range" min="1" max="25" value="5">
+                <div class="chip"><span id="thirstStepText">5</span>%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="btnSave" class="btn primary">Save</button>
+          </div>
+        </div>
+
+        <div id="toast" class="toast hidden"></div>
+
+        <div class="nav">
+          <button id="navHome" class="navBtn active">Home</button>
+          <button id="navSettings" class="navBtn">Settings</button>
+          <button id="btnClose" class="navBtn danger">X</button>
+        </div>
+      </div>
+
+      <div class="strap bottom"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
